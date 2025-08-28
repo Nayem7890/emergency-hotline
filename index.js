@@ -36,7 +36,7 @@ for (let callButton of callBtns) {
 
             historyClear.append(newCard);
         } else {
-            alert("You do not have enough coins. At least 20 coins are required to make a call.");
+            alert("🚨You do not have enough coins. At least 20 coins are required to make a call.");
             return;
         }
     });
