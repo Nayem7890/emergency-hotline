@@ -4,13 +4,13 @@ const callBtns = document.getElementsByClassName('call-btn');
 for(let callButton of callBtns) {
     callButton.addEventListener('click', function () {
       
-        const contactCard = callButton.closest('.contact-card');
-        const callTitle = contactCard.querySelector('.contact-title').innerText;
-        const callNumber = contactCard.querySelector('.contact-number').innerText;
-         
+    
+        const callTitle = callButton.parentNode.parentNode.parentNode.children[1].children[0].innerText;
+        
+        const callNumber = callButton.parentNode.parentNode.parentNode.children[1].children[2].innerText;
 
          const callHistory = document.getElementById('call-history');
-         const newCart = document.createElement('div');
+         const newCart = document.createElement("div");
          newCart.innerHTML = `
                    <div class="w-11/12 p-2 mx-auto mt-2 bg-[#F2F2F2] rounded-xl">
                     <div class="w-2/3">
@@ -27,6 +27,6 @@ for(let callButton of callBtns) {
 }
  
 document.getElementById('btn-clear').addEventListener('click', function () {
-    const callHistoryClear = document.getElementById('history-clear');
+    const callHistoryClear = document.getElementById('call-history');
     callHistoryClear.innerHTML = "";
 })
