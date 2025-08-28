@@ -26,10 +26,10 @@ for (let callButton of callBtns) {
                 <div class="w-11/12 px-1 md:px-2 mx-auto mt-2 bg-[#F2F2F2] rounded-xl flex justify-between items-center flex-col md:flex-row py-2">
                     <div class="">
                         <h2 class="text-base md:text-xl font-bold">${callTitle}</h2>
-                        <p class="py-1 text-[#5C5C5C]">${callNumber}</p>
+                        <p class="py-2 text-[#5C5C5C]">${callNumber}</p>
                     </div>
                     <div>
-                        <p class="text-sm text-[#5C5C5C] pr-2">${currentTime}</p>
+                        <p class="text-sm text-[#5C5C5C]">${currentTime}</p>
                     </div>
                 </div>
             `;
