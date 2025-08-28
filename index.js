@@ -4,17 +4,18 @@ const callBtns = document.getElementsByClassName('call-btn');
 for(let callButton of callBtns) {
     callButton.addEventListener('click', function () {
       
-        const callTitle = callButton.parentNode.parentNode.parentNode.children[1].children[0].innerTex
-        const callNumber = callButton.parentNode.parentNode.parentNode.children[1].children[2].innerTex;
-         console.log(callNumber)
+        const contactCard = callButton.closest('.contact-card');
+        const callTitle = contactCard.querySelector('.contact-title').innerText;
+        const callNumber = contactCard.querySelector('.contact-number').innerText;
+         
 
          const callHistory = document.getElementById('call-history');
          const newCart = document.createElement('div');
          newCart.innerHTML = `
                    <div class="w-11/12 p-2 mx-auto mt-2 bg-[#F2F2F2] rounded-xl">
-                    <div>
-                        <h2 class="text-base md:text-xl font-bold">Title Name</h2>
-                    <p class="py-1 text-[#5C5C5C]">Phone Number</p>
+                    <div class="w-2/3">
+                        <h2 class="text-base md:text-xl font-bold">${callTitle}</h2>
+                    <p class="py-1 text-[#5C5C5C]">${callNumber}</p>
                     </div>
                     <div>
                     
@@ -24,3 +25,8 @@ for(let callButton of callBtns) {
          callHistory.append(newCart);
     });
 }
+ 
+document.getElementById('btn-clear').addEventListener('click', function () {
+    const callHistoryClear = document.getElementById('history-clear');
+    callHistoryClear.innerHTML = "";
+})
