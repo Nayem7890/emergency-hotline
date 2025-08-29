@@ -4,10 +4,10 @@ const callBtns = document.getElementsByClassName('call-btn');
 for (let callButton of callBtns) {
     callButton.addEventListener('click', function () {
         
-        const contactCard = callButton.closest('.contact-card');
-
-        const callTitle = contactCard.querySelector('.contact-title').innerText;
-        const callNumber = contactCard.querySelector('.contact-number').innerText;
+        const contactCard = callButton.parentNode.parentNode.parentNode;
+        const callTitle = contactCard.children[0].children[1].children[0].innerText;
+        const callNumber = contactCard.children[0].children[1].children[2].innerText;
+               
 
         const coinElement = document.getElementById('coin-balance');
         let currentCoins = parseInt(coinElement.innerText);
@@ -36,7 +36,7 @@ for (let callButton of callBtns) {
 
             historyClear.append(newCard);
         } else {
-            alert("🚨You do not have enough coins. At least 20 coins are required to make a call.");
+            alert("❌You do not have enough coins. At least 20 coins are required to make a call.");
             return;
         }
     });
